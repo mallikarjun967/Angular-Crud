@@ -1,0 +1,34 @@
+
+<div>
+    <h1  mat-dialog-title>Login Form</h1>
+    
+    </div>
+    <div mat-dialog-content>
+        <div class="container-fluid box">
+            <form [formGroup]="loginForm" >
+            <div class="row">
+              <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input  matInput type="text" formControlName="userName" placeholder="Enter Username" #u1>
+                <mat-error *ngIf="myError('userName', 'required')">Username is required</mat-error>
+               </mat-form-field><br><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input  matInput type="password" formControlName="passWord" placeholder="Enter password" #p2>
+            <mat-error *ngIf="myError('userName', 'required')">password is required</mat-error>  
+           </mat-form-field> 
+           <div style="color: red;"> {{msg}}</div>
+          <br><br>
+
+           </div>
+    </form>
+    <div mat-dialog-actions [align]="'end'">
+        <button  class="btn btn-success" (click)="check(u1.value,p2.value)">Login</button>
+     
+    </div>
+    </div>
+      </div>
+    
+    
+      
+    

@@ -1,0 +1,47 @@
+
+
+
+<div  class="container-fluid tables">
+
+  <div class="headers">
+  <h1 class="table-title" >PRODUCTS  </h1>
+    <a routerLink="/create"><button class="btn btn-danger add"  >Add product</button> </a>
+
+
+  </div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ProductId</th>
+      <th scope="col">Poduct name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+      <th scope="col">Price</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+    <tr *ngFor="let product of productList">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td> <img src="{{product.image}}" alt="" width="50%" height="80px" ></td>
+      <td>{{product.category}}</td>
+      <td>{{product.discription}}</td>
+      <td>{{product.date}}</td>
+      <td>{{product.price | currency:'INR'}}</td>
+      <td><button class="btn btn-primary" [routerLink]="['/update',product.id]">Edit</button>  
+       <button class="btn btn-danger"  (click)="deleteProduct(product.id)" style="margin-left: 5px;">delete</button></td>
+    
+    </tr>
+    <div>
+      
+    </div>
+    
+   
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,56 @@
+
+
+<h1  mat-dialog-title>Product Form</h1>
+<div mat-dialog-content>
+    <div class="container-fluid box">
+        <form [formGroup]="ProductForm">
+        <div class="row">
+         
+    <mat-form-field appearance="outline">
+        <mat-label>Product name</mat-label>
+        <input  matInput type="text" formControlName="Productname" placeholder="Name">
+       </mat-form-field><br>
+
+       <mat-form-field appearance="outline" >
+        <mat-label>Product image</mat-label>
+        <input matInput type="text" formControlName="Productimg" placeholder="image url">
+       </mat-form-field><br>
+
+       <mat-form-field appearance="outline">
+        <mat-label>Discription</mat-label>
+        <textarea matInput formControlName="Description"> </textarea>
+       </mat-form-field>
+
+       <mat-form-field appearance="outline">
+        <mat-label>Product category</mat-label>
+        <mat-select formControlName="Category" placeholder="category" >
+            <mat-option value="Fruits">Fruits</mat-option>
+            <mat-option value="Vegetables">Vegetables</mat-option>
+            <mat-option value="electronic">Electronics</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="Date" matInput>
+        <mat-hint>YYYY-MM-DD</mat-hint>
+      </mat-form-field>
+      
+
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="Price" placeholder="price">
+       </mat-form-field><br>
+       </div>
+
+</form>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" (click)="Close()">close</button>
+  <button mat-raised-button color="primary" style="margin-left: 10px;" type="submit" (click)="updateProduct()"  [disabled]="ProductForm.invalid"  > 
+      Update</button>
+</div>
+</div>
+  </div>
+
+
+  
